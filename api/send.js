@@ -1,7 +1,19 @@
 export default async function handler(req, res) {
+  // Aggiungi header CORS SEMPRE (anche per preflight)
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // Gestione richiesta preflight (OPTIONS)
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  // Gestione POST vera
   if (req.method === 'POST') {
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwfJVaDZEvBpBtluwNvF8dqapvGDUIGAw28jLIfKnb9NXhhhnuG3dEgAHmfzHWrfhVw/exec', {
+      const response = await fetch('https://script.google.com/macros/s/IL_TUO_URL_SCRIPT/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
