@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   // Gestione POST vera
   if (req.method === 'POST') {
     try {
-      const response = await fetch('https://script.google.com/macros/s/IL_TUO_URL_SCRIPT/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwfJVaDZEvBpBtluwNvF8dqapvGDUIGAw28jLIfKnb9NXhhhnuG3dEgAHmfzHWrfhVw/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
